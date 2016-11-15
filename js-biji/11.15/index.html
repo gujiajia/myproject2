@@ -1,0 +1,35 @@
+<!--<button onclick="for(var i=0;i<2000;i++){document.write('顾佳嘉');}"></button>
+<script src="index.js"></script>
+<script>
+
+function printName() {
+    for (var i = 0; i < 2000; i++) {
+        var r = parseInt(Math.random() * 10);//0-9
+        var g = parseInt(Math.random() * 10);//0-9
+        var b = parseInt(Math.random() * 10);//0-9
+        var rgb = r + "" + g + b;
+        document.write(`<h1 style=color:#${rgb}>顾佳嘉</h1>`);
+    };
+}
+printName();
+</script>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="index.js">
+    var age =parseInt(prompt('请输入您的年龄'));
+    do{
+        alert(age);
+        age++;
+    }while(age<30);
+    </script>
+
+</body>
+
+</html>

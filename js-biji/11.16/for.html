@@ -29,11 +29,6 @@
             font-size: 14px;
         }
         
-        td:hover {
-            transition: transition-property transition-duration transition-timing-function transition-delay;
-            transition: background dura timing delay;
-        }
-        
         div {
             width: 300px;
             height: 50px;
@@ -58,8 +53,7 @@
                         p.innerHTML = arr[i];
                     }
                     td[i].onmouseover = function() {
-                        var arr2 = [月份img / 一月.png, 月份img / 二月.png, 月份img / 三月.png]
-                        td.innerHTML = arr2[i];
+                        td[i].style.background = 'url(img / 01. png)';
                     }
                 })(i);
             }

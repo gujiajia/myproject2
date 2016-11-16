@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        table {
+            border: 1px solid #fff;
+            width: 300px;
+            margin: 0px auto;
+            background: #ccc;
+        }
+        
+        td {
+            border: 1px solid #fff;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        td:hover {
+            transition: transition-property transition-duration transition-timing-function transition-delay;
+            transition: background dura timing delay;
+        }
+        
+        div {
+            width: 300px;
+            height: 50px;
+            margin: 0px auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            //1.创建一个数组，防止问候语
+            var arr = ['一月水仙姣，翩翩不浊尘。', '二月梅花俏，凌寒傲雪贞。', '三月桃花娇，笑春百葩衬。', '四月梨花飘，筎酽骄若嗔。', '五月牡丹窕，国色天香称。', '六月月季妖，妩媚含刺赠。', '七月蜀葵腰，欲扶柔云枕。', '八月荷花摇，碧波映浴神。', '九月桂花妙，秋瑟馨愈真。', '十月芙蓉茂，独殿群芳阵。', '十一菊花笑，霜恶节自珍。', '十二茶花潮，恣艳岂甘斟。 ']
+
+            //2.获取页面中放置问候语的元素
+            var p = document.getElementById('text');
+            // p.innerHTML = '一月水仙姣，翩翩不浊。';
+            //3.获取所有的td元素
+            var td = document.getElementsByTagName('td');
+            //4.给每个td 绑定点击事件 (闭包函数的写法)
+            for (var i = 0; i < td.length; i++) {
+                (function(i) {
+                    td[i].onclick = function() {
+                        p.innerHTML = arr[i];
+                    }
+                    td[i].onmouseover = function() {
+                        var arr2 = [月份img / 一月.png, 月份img / 二月.png, 月份img / 三月.png]
+                        td.innerHTML = arr2[i];
+                    }
+                })(i);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>月份问候语</h1>
+    <table>
+        <tr>
+            <td>1月份</td>
+            <td>2月份</td>
+            <td>3月份</td>
+        </tr>
+        <tr>
+            <td>4月份</td>
+            <td>5月份</td>
+            <td>6月份</td>
+        </tr>
+        <tr>
+            <td>7月份</td>
+            <td>8月份</td>
+            <td>9月份</td>
+        </tr>
+        <tr>
+            <td>10月份</td>
+            <td>11月份</td>
+            <td>12月份</td>
+        </tr>
+
+    </table>
+    <div>
+        <p id="text">一月水仙姣，翩翩不浊尘。</p>
+    </div>
+</body>
+
+</html>

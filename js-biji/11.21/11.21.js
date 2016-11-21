@@ -60,10 +60,59 @@ alert(document.getElementById('test').innerHTML); //标签名
 alert(document.getElementById('test').id); //id 获取id 值
 alert(document.getElementById('test').title); //title  获取标题名（title）的值
 alert(document.getElementById('test').style); //获取css样式
-alert(document.getElementById('test').style.color); //获取css样式
+alert(document.getElementById('test').style.color); //获取css样式颜色
 
 //赋值节点属性
-document.getElementById('test').innerHTML = 'hello world'; //打印标签名
-// document.getElementById('test').id = 'HELLO'; //标签名
-document.getElementById('test').title = 'hello'; //title  获取标题名（title）的值
-document.getElementById('test').style.color = 'green'; //获取css样式
+document.getElementById('test').innerHTML = 'hello world'; //标签中的内容
+// document.getElementById('test').id = 'HELLO'; //获取Id的值
+document.getElementById('test').title = 'hello'; //获取标题名（title）的值
+document.getElementById('test').style.color = 'green'; //获取css样式颜色
+document.getElementById('test').nodeName;
+document.getElementById('test').nodeValue;
+
+//层次节点 
+//childNodes  获取当前元素节点的所有子节点
+alert(document.getElementById('test2').childNodes.length); //打印的3
+//div id="test2">测试DIV<span>中间</span>结尾</div>
+//3个节点 ，1.文本节点：测试DIV<
+//2.标签节点：<span>中间</span>
+//3.文本节点：结尾
+
+//firstChild  返回文本对象
+//元素节点的nodeName=标签名  文本节点的nodeName=#text
+alert(document.getElementById('test2').firstChild.nodeName);
+//文本节点的nodeType=3
+alert(document.getElementById('test2').firstChild.nodeType);
+//文本节点的nodeValue=innerHTML  文本类容
+alert(document.getElementById('test2').firstChild.nodeValue);
+
+
+//元素标签
+//元素标签的nodeName=标签名
+alert(document.getElementById('test2').childNodes[1].nodeName);
+//元素标签的nodeType=1
+alert(document.getElementById('test2').childNodes[1].nodeType);
+//元素节点的nodeValue为null
+alert(document.getElementById('test2').childNodes[1].nodeValue);
+
+//父节点
+alert(document.getElementById('test2').firstChild.parentNode);
+
+
+//节点操作：增删查改
+//write 往页面中写内容
+document.write('hello'); //会覆盖原有的页面
+
+//获取DIV
+var item = document.getElementById('DIV');
+//创建一个元素节点
+var p = document.createElement('p'); //创建的节点自不会增加到页面
+p.id = 'id'; //创建属性节点
+//创建文本节点
+var text1 = document.createTextNode('hello');
+//增加到节点的尾部
+item.appendChild(p);
+p.appendChild(text1);
+item.removeChild(p); //删除
+item.removeChild(item.firstChild); //删除
+item.removeChild(item.children[5]); //删除
